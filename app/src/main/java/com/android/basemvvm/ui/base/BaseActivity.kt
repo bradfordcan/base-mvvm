@@ -1,4 +1,4 @@
-package com.android.basemvvm.ui.base
+    package com.android.basemvvm.ui.base
 
 import androidx.appcompat.app.AppCompatActivity
 
