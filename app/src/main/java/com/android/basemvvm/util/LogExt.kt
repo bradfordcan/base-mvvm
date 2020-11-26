@@ -2,7 +2,7 @@ package com.android.basemvvm.util
 
 import timber.log.Timber
 
-fun logDebug(message: Any?, throwable: Throwable? = null) {
+fun logDebug(tag: String = "", message: Any?, throwable: Throwable? = null) {
     Timber.d(throwable, message.toString())
 }
 

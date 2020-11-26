@@ -1,5 +1,6 @@
 package com.android.basemvvm.data.remote
 
+import android.content.res.Resources
 import com.android.basemvvm.data.remote.exceptions.NetworkConnectionException
 
 sealed class ApiResponse<T>(open val code: Int = 0, open var data: T? = null) {
@@ -30,4 +31,16 @@ sealed class ApiResponse<T>(open val code: Int = 0, open var data: T? = null) {
 
     class NetworkError : Error<Nothing>(exception = NetworkConnectionException())
 
+}
+
+fun ApiResponse<*>?.createError(resources: Resources): UiError {
+    fun unexpected(code: Int) = UiError(
+        icon = 0,
+        title = "Unexpected Error!",
+        message = "An unexpected error occurred. (code = %d".format(code)
+    )
+
+    return when {
+        else -> unexpected(-500)
+    }
 }
