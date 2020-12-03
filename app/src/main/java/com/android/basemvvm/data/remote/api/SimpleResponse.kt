@@ -1,4 +1,4 @@
-package com.android.basemvvm.data.remote
+package com.android.basemvvm.data.remote.api
 
 import com.android.basemvvm.util.isNotNullOrEmpty
 import com.squareup.moshi.Json

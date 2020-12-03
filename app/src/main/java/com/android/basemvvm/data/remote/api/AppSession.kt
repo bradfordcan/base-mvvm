@@ -1,4 +1,4 @@
-package com.android.basemvvm.data.remote
+package com.android.basemvvm.data.remote.api
 
 import android.os.Build
 import com.android.basemvvm.util.getDeviceModel

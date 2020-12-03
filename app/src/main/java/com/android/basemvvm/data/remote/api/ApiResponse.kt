@@ -1,6 +1,7 @@
-package com.android.basemvvm.data.remote
+package com.android.basemvvm.data.remote.api
 
 import android.content.res.Resources
+import com.android.basemvvm.data.remote.UiError
 import com.android.basemvvm.data.remote.exceptions.NetworkConnectionException
 
 sealed class ApiResponse<T>(open val code: Int = 0, open var data: T? = null) {

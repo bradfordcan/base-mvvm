@@ -1,7 +1,7 @@
-package com.android.basemvvm.data.remote
+package com.android.basemvvm.data.remote.api
 
 import android.content.res.Resources
-import com.android.basemvvm.data.remote.ApiEvent.ApiStatus
+import com.android.basemvvm.data.remote.api.ApiEvent.ApiStatus
 
 sealed class ApiEvent<T> {
 

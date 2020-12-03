@@ -1,4 +1,4 @@
-package com.android.basemvvm.data.remote
+package com.android.basemvvm.data.remote.api
 
 enum class HttpCodes(val code: Int) {
     UNKNOWN(0),
