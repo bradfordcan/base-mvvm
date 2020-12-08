@@ -9,11 +9,14 @@ import com.android.basemvvm.data.remote.MovieNetworkDataSource
 import com.android.basemvvm.data.remote.MovieNetworkDataSourceImpl
 import com.android.basemvvm.data.repository.MovieRepository
 import com.android.basemvvm.data.repository.MovieRepositoryImpl
+import com.android.basemvvm.data.ui.MovieViewModelFactory
+import com.bumptech.glide.load.model.ModelLoaderFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
+import org.kodein.di.generic.provider
 import org.kodein.di.generic.singleton
 
 
@@ -30,5 +33,10 @@ class BaseApplication : Application(), KodeinAware {
         bind() from singleton { SampleApiService(instance()) } // gets instance from above line
         bind<MovieNetworkDataSource>() with singleton { MovieNetworkDataSourceImpl(instance()) } // gets instance from above line
         bind<MovieRepository>() with singleton { MovieRepositoryImpl(instance(), instance()) }
+        bind() from provider { MovieViewModelFactory(instance()) }
+    }
+
+    override fun onCreate() {
+        super.onCreate()
     }
 }

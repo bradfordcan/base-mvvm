@@ -16,16 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val apiService = SampleApiService(ConnectivityInterceptorImpl(this))
-        val movieNetworkDataSource = MovieNetworkDataSourceImpl(apiService)
-
-        movieNetworkDataSource.downloadedMovie.observe(this, Observer {
-            // Display results
-        })
-
-        GlobalScope.launch(Dispatchers.Main) {
-            movieNetworkDataSource.fetchMovie("Avengers End Game")
-        }
 
     }
 }
